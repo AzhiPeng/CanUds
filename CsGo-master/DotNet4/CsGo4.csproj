@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{41018905-EB3E-4E25-8792-DA8CCBAF988F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CsGo</RootNamespace>
+    <AssemblyName>CsGo</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <WarningsAsErrors>CS4014</WarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <WarningsAsErrors>CS4014</WarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AsyncBridge\AsyncCompatLibExtensions.cs" />
+    <Compile Include="AsyncBridge\Runtime.CompilerServices\AsyncMethodBuilderCore.cs" />
+    <Compile Include="AsyncBridge\Runtime.CompilerServices\AsyncMethodTaskCache.cs" />
+    <Compile Include="AsyncBridge\Runtime.CompilerServices\AsyncStateMachineAttribute.cs" />
+    <Compile Include="AsyncBridge\Runtime.CompilerServices\AsyncTaskMethodBuilder.cs" />
+    <Compile Include="AsyncBridge\Runtime.CompilerServices\AsyncVoidMethodBuilder.cs" />
+    <Compile Include="AsyncBridge\Runtime.CompilerServices\CallerFilePathAttribute.cs" />
+    <Compile Include="AsyncBridge\Runtime.CompilerServices\CallerLineNumberAttribute.cs" />
+    <Compile Include="AsyncBridge\Runtime.CompilerServices\CallerMemberNameAttribute.cs" />
+    <Compile Include="AsyncBridge\Runtime.CompilerServices\ConfiguredTaskAwaitable.cs" />
+    <Compile Include="AsyncBridge\Runtime.CompilerServices\IAsyncMethodBuilder.cs" />
+    <Compile Include="AsyncBridge\Runtime.CompilerServices\IAsyncStateMachine.cs" />
+    <Compile Include="AsyncBridge\Runtime.CompilerServices\ICriticalNotifyCompletion.cs" />
+    <Compile Include="AsyncBridge\Runtime.CompilerServices\INotifyCompletion.cs" />
+    <Compile Include="AsyncBridge\Runtime.CompilerServices\IteratorStateMachineAttribute.cs" />
+    <Compile Include="AsyncBridge\Runtime.CompilerServices\StateMachineAttribute.cs" />
+    <Compile Include="AsyncBridge\Runtime.CompilerServices\TaskAwaiter.cs" />
+    <Compile Include="AsyncBridge\Runtime.CompilerServices\VoidTaskResult.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="..\CsGo\Go\async_timer.cs" />
+    <Compile Include="..\CsGo\Go\channel.cs" />
+    <Compile Include="..\CsGo\Go\functional.cs" />
+    <Compile Include="..\CsGo\Go\generator.cs" />
+    <Compile Include="..\CsGo\Go\mt19937.cs" />
+    <Compile Include="..\CsGo\Go\time_heap.cs" />
+    <Compile Include="..\CsGo\Go\mutex.cs" />
+    <Compile Include="..\CsGo\Go\shared_strand.cs" />
+    <Compile Include="..\CsGo\Go\socket.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

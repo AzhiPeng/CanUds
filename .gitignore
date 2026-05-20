@@ -1,0 +1,22 @@
+﻿# Build outputs
+**/bin/
+**/obj/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+
+# NuGet packages folder
+packages/
+
+# Logs
+*.log
+
+# Test artifacts
+*.trx
+
+# OS
+Thumbs.db
+Desktop.ini

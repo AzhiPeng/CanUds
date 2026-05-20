@@ -1,0 +1,464 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{ADBE82CB-3234-420F-B807-50FF63530B65}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>TestProcessFormsApp</RootNamespace>
+    <AssemblyName>TestProcessFormsApp</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>128.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CaeaGenKeyProxy, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\CaeaGenKeyProxy.dll</HintPath>
+    </Reference>
+    <Reference Include="CSkin, Version=16.1.14.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\cskin.16.1.14.3\lib\net40\CSkin.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="FastReport, Version=2021.4.0.0, Culture=neutral, PublicKeyToken=5ceb240df42bf6e8, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\FastReport.dll</HintPath>
+    </Reference>
+    <Reference Include="FastReport.Compat, Version=2021.3.0.0, Culture=neutral, PublicKeyToken=406e1f4c3c8ef97e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\FastReport.Compat.dll</HintPath>
+    </Reference>
+    <Reference Include="Gpg.NET, Version=0.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <HintPath>..\packages\Gpg.NET.2.1.3\lib\net452\Gpg.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.BarTender, Version=9.40.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>bin\Debug\Interop.BarTender.dll</HintPath>
+    </Reference>
+    <Reference Include="KyleLib, Version=2.4.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\KyleLib.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.17.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.17\lib\net45\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NModbus4, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NModbus4.2.1.0\lib\net40\NModbus4.dll</HintPath>
+    </Reference>
+    <Reference Include="Otp, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Otp.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=2.0.3.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.2.0.3\lib\net471\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="ZooKeeperNetEx, Version=3.4.12.4, Culture=neutral, PublicKeyToken=42cd15de36f9b993, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\ZooKeeperNetEx.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing, Version=0.16.9.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\zxing.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing.presentation, Version=0.16.9.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\zxing.presentation.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dal\BaseDao.cs" />
+    <Compile Include="Dal\DbConnent.cs" />
+    <Compile Include="Dal\EcuidInfo.cs" />
+    <Compile Include="Dal\MssqlDbConnent.cs" />
+    <Compile Include="Dal\ProductInfo.cs" />
+    <Compile Include="Dal\ProductionTask.cs" />
+    <Compile Include="Dal\ProductModel.cs" />
+    <Compile Include="Frm\FrmDownloadFromMes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\FrmDownloadFromMes.Designer.cs">
+      <DependentUpon>FrmDownloadFromMes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm\FrmDownloadJsonFromMes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\FrmDownloadJsonFromMes.Designer.cs">
+      <DependentUpon>FrmDownloadJsonFromMes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm\FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm\FrmUploadJsonToMes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\FrmUploadJsonToMes.Designer.cs">
+      <DependentUpon>FrmUploadJsonToMes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm\FrmUploadMes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\FrmUploadMes.Designer.cs">
+      <DependentUpon>FrmUploadMes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm\UserControlCanMessage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Frm\UserControlCanMessage.Designer.cs">
+      <DependentUpon>UserControlCanMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\BaseModel.cs" />
+    <Compile Include="Model\EcuidInfoModel.cs" />
+    <Compile Include="Model\ProductInfoModel.cs" />
+    <Compile Include="Model\ProductionTaskModel.cs" />
+    <Compile Include="Model\ProductModelInfoModel.cs" />
+    <Compile Include="Print\BarTenderPrint.cs" />
+    <Compile Include="Communication\CAEA008TCPModbus.cs" />
+    <Compile Include="Communication\CAN\CanReceiver.cs" />
+    <Compile Include="Communication\CAN\CanSender.cs" />
+    <Compile Include="Communication\CAN\CANUDPClient.cs" />
+    <Compile Include="Communication\CAN\ParseDbc.cs" />
+    <Compile Include="Communication\CAN\SecurityUnlocker.cs" />
+    <Compile Include="Communication\Master-slave\ModbusTcpMaster.cs" />
+    <Compile Include="Communication\Master-slave\ModbusTcpSalve.cs" />
+    <Compile Include="Frm\DoubleBufferDataGridView.cs" />
+    <Compile Include="Frm\FrmCanMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\FrmCanMessage.Designer.cs">
+      <DependentUpon>FrmCanMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm\FrmCanNode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\FrmCanNode.Designer.cs">
+      <DependentUpon>FrmCanNode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm\FrmDRead.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\FrmDRead.Designer.cs">
+      <DependentUpon>FrmDRead.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm\FrmLocalSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\FrmLocalSetting.designer.cs">
+      <DependentUpon>FrmLocalSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm\FrmLossAndSend.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\FrmLossAndSend.Designer.cs">
+      <DependentUpon>FrmLossAndSend.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm\FrmNewText.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\FrmNewText.designer.cs">
+      <DependentUpon>FrmNewText.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm\FrmParseTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\FrmParseTest.Designer.cs">
+      <DependentUpon>FrmParseTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm\FrmPendingPrintJobs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\ParmsInputDialogue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\ParmsInputDialogue.designer.cs">
+      <DependentUpon>ParmsInputDialogue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm\WinForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\WinForm.Designer.cs">
+      <DependentUpon>WinForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Log\LogHelper.cs" />
+    <Compile Include="Log\LogHelperError.cs" />
+    <Compile Include="Log\LogTestDatacsv.cs" />
+    <Compile Include="Log\ScanLog.cs" />
+    <Compile Include="Print\MesSetting.cs" />
+    <Compile Include="Print\PrintBase.cs" />
+    <Compile Include="Print\PrintSetting.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Public\AppGlobal.cs" />
+    <Compile Include="Public\LocalSetting.cs" />
+    <Compile Include="Public\PropertySorter.cs" />
+    <Compile Include="Public\TupleRequstInfoModel.cs" />
+    <Compile Include="测试类\Case.cs" />
+    <Compile Include="测试类\CaseConfig.cs" />
+    <Compile Include="测试类\CaseFactory.cs" />
+    <Compile Include="测试类\CsvHelper.cs" />
+    <Compile Include="测试类\ParseTestItems.cs" />
+    <Compile Include="测试类\PingWithSpecificAdapter.cs" />
+    <Compile Include="测试类\Rule.cs" />
+    <Compile Include="测试类\SeedKeyCaculate.cs" />
+    <Compile Include="测试类\TaskMainWorker.cs" />
+    <Compile Include="追溯\UpdateInfo.cs" />
+    <Compile Include="追溯\WebServer.cs" />
+    <Compile Include="追溯\关联追溯.cs" />
+    <EmbeddedResource Include="Frm\FrmCanMessage.resx">
+      <DependentUpon>FrmCanMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm\FrmCanNode.resx">
+      <DependentUpon>FrmCanNode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm\FrmDownloadFromMes.resx">
+      <DependentUpon>FrmDownloadFromMes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm\FrmDownloadJsonFromMes.resx">
+      <DependentUpon>FrmDownloadJsonFromMes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm\FrmDRead.resx">
+      <DependentUpon>FrmDRead.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm\FrmLocalSetting.resx">
+      <DependentUpon>FrmLocalSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm\FrmLossAndSend.resx">
+      <DependentUpon>FrmLossAndSend.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm\FrmNewText.resx">
+      <DependentUpon>FrmNewText.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm\FrmParseTest.resx">
+      <DependentUpon>FrmParseTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm\FrmUploadJsonToMes.resx">
+      <DependentUpon>FrmUploadJsonToMes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm\FrmUploadMes.resx">
+      <DependentUpon>FrmUploadMes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm\ParmsInputDialogue.resx">
+      <DependentUpon>ParmsInputDialogue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm\UserControlCanMessage.resx">
+      <DependentUpon>UserControlCanMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm\WinForm.resx">
+      <DependentUpon>WinForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.manifest" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\不合格.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\TouchSocket.Core.2.0.16\analyzers\dotnet\cs\TouchSocket.Core.SourceGenerator.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\合格.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\就绪.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\正在测试.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trafficlight_green_96px_1187357_easyicon.net.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trafficlight_red_96px_1187358_easyicon.net.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_orange_up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_orange_down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Arrow_Up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Arrow_Down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\GmApi\GmApi.csproj">
+      <Project>{76b8a1f7-84c0-4848-9804-8e5fc8f3c85e}</Project>
+      <Name>GmApi</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\JModbusClient修复读取超时\JModbusClient\JModbusClient.csproj">
+      <Project>{1948a218-e7e1-46c2-921a-2e55ca5d4f1c}</Project>
+      <Name>JModbusClient</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\128.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\16.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="128.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="CopyPrinterNativeDlls" AfterTargets="Build">
+    <!-- 2026-05-19: 固定输出x86打印DLL，避免运行时加载到x64版本导致0x8007000B -->
+    <Copy SourceFiles="Native\x86\Winpplb.dll;Native\x86\WINPSK.dll;Native\x86\WinPort.dll" DestinationFolder="$(OutDir)" SkipUnchangedFiles="true" />
+  </Target>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+</Project>
